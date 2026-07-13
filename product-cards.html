@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inkwell Supply Co. | Stationery Store</title>
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #f2f0eb;
+        padding: 40px 20px;
+    }
+
+    .page-title {
+        text-align: center;
+        margin-bottom: 10px;
+        color: #2e2a25;
+        font-size: 32px;
+    }
+
+    .page-subtitle {
+        text-align: center;
+        color: #6b6558;
+        margin-bottom: 40px;
+        font-size: 15px;
+    }
+
+    /* container that holds all the cards */
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* -------- Product Card -------- */
+    .product-card {
+        background-color: #ffffff;
+        width: 280px;
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Hover Effect on Card */
+    .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    /* SALE ribbon using ::before */
+    .product-card.on-sale::before {
+        content: "SALE";
+        position: absolute;
+        top: 14px;
+        left: -30px;
+        background-color: #d64545;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 4px 35px;
+        transform: rotate(-40deg);
+        letter-spacing: 1px;
+        z-index: 2;
+    }
+
+    /* Image wrapper - needed to clip the zoom effect */
+    .image-wrapper {
+        width: 100%;
+        height: 190px;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        background-color: #eeeae2;
+    }
+
+    .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+    }
+
+    /* Zoom image on hover */
+    .product-card:hover .image-wrapper img {
+        transform: scale(1.12);
+    }
+
+    .product-name {
+        font-size: 18px;
+        color: #2e2a25;
+        margin-bottom: 6px;
+    }
+
+    .price-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 6px;
+    }
+
+    .price {
+        font-size: 17px;
+        font-weight: bold;
+        color: #1f4d3a;
+    }
+
+    .old-price {
+        font-size: 13px;
+        color: #a19c8f;
+        text-decoration: line-through;
+    }
+
+    /* Discount Badge */
+    .discount-badge {
+        display: inline-block;
+        background-color: #fce6c9;
+        color: #8a5a11;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 3px 8px;
+        border-radius: 6px;
+        margin-bottom: 14px;
+    }
+
+    /* Buy Now Button */
+    .buy-btn {
+        width: 100%;
+        padding: 10px 0;
+        background-color: #1f4d3a;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        letter-spacing: 0.5px;
+        transition: background-color 0.25s ease, transform 0.15s ease;
+    }
+
+    /* Hover Effect on Button */
+    .buy-btn:hover {
+        background-color: #163a2c;
+        transform: scale(1.03);
+    }
+
+    .buy-btn:active {
+        transform: scale(0.98);
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 45px;
+        color: #8a8578;
+        font-size: 13px;
+    }
+
+</style>
+</head>
+<body>
+
+    <h1 class="page-title">zoro shop.co</h1>
+    <p class="page-subtitle">Stationery essentials for students &mdash; notebooks, pens &amp; desk finds</p>
+
+    <div class="card-container">
+
+        <!-- Card 1 -->
+        <div class="product-card on-sale">
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=400&h=400&fit=crop" alt="Spiral Notebook">
+            </div>
+            <div class="product-name">Spiral Ruled Notebook</div>
+            <div class="price-row">
+                <span class="price">₹149</span>
+                <span class="old-price">₹220</span>
+            </div>
+            <div class="discount-badge">32% OFF</div>
+            <button class="buy-btn">BUY NOW</button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card">
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1583485088034-697b5bc36b9c?w=400&h=400&fit=crop" alt="Gel Pen Set">
+            </div>
+            <div class="product-name">Gel Pen Set (10 pcs)</div>
+            <div class="price-row">
+                <span class="price">₹99</span>
+            </div>
+            <div class="discount-badge">Best Seller</div>
+            <button class="buy-btn">BUY NOW</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card on-sale">
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=400&h=400&fit=crop" alt="Desk Organizer">
+            </div>
+            <div class="product-name">Wooden Desk Organizer</div>
+            <div class="price-row">
+                <span class="price">₹499</span>
+                <span class="old-price">₹699</span>
+            </div>
+            <div class="discount-badge">28% OFF</div>
+            <button class="buy-btn">BUY NOW</button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="product-card">
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1611258161708-1eb87b26e9a5?w=400&h=400&fit=crop" alt="Sticky Notes">
+            </div>
+            <div class="product-name">Sticky Notes Combo</div>
+            <div class="price-row">
+                <span class="price">₹79</span>
+            </div>
+            <div class="discount-badge">New Arrival</div>
+            <button class="buy-btn">BUY NOW</button>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="product-card on-sale">
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400&h=400&fit=crop" alt="Backpack">
+            </div>
+            <div class="product-name">Canvas Study Backpack</div>
+            <div class="price-row">
+                <span class="price">₹899</span>
+                <span class="old-price">₹1299</span>
+            </div>
+            <div class="discount-badge">30% OFF</div>
+            <button class="buy-btn">BUY NOW</button>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="product-card">
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=400&fit=crop" alt="Highlighters">
+            </div>
+            <div class="product-name">Pastel Highlighter Pack</div>
+            <div class="price-row">
+                <span class="price">₹129</span>
+            </div>
+            <div class="discount-badge">Limited Stock</div>
+            <button class="buy-btn">BUY NOW</button>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 zoro shop.co. | Mini Project - Web Designing Lab
+    </footer>
+
+</body>
+</html>
